@@ -3,30 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Сайт web-студії "Web-DECO"</title>
-    <script type="text/javascript">
-        function send()
-        {
-            var valid = true;
-            var elems = document.forms[0].elements;
-            for(var i=0; i < document.forms[0].length; i++){
-                if(elems[i].getAttribute('type')== 'text'||
-                elems[i].getAttribute('type')== 'password'||
-                elems[i].getAttribute('type')== 'email')
-                {
-                    if(elems[i]. value == '')
-                    {
-                        elems[i].style.border = '2px solid red';
-                        valid = false;
-                    }
-                }
-            }
-            if(!valid)
-            {
-                alert ('Заповніть всі поля !!!');
-                return false;
-            }
-        }
-    </script>
+    <script src="js/clock1.js"></script>
+    
     <style>
         .shadowtext {
         text-shadow: 1px 3px 2px white, 0 0 1em red;
@@ -34,6 +12,32 @@
         font-size: 3em;
         }
         </style>
+        <script>window.onload = function(){
+            setInterval(clockPainting, 1000); }</script>
+            <script type="text/javascript">
+                function send()
+                {
+                    var valid = true;
+                    var elems = document.forms[0].elements;
+                    for(var i=0; i < document.forms[0].length; i++){
+                        if(elems[i].getAttribute('type')== 'text'||
+                        elems[i].getAttribute('type')== 'password'||
+                        elems[i].getAttribute('type')== 'email')
+                        {
+                            if(elems[i]. value == '')
+                            {
+                                elems[i].style.border = '2px solid red';
+                                valid = false;
+                            }
+                        }
+                    }
+                    if(!valid)
+                    {
+                        alert ('Заповніть всі поля !!!');
+                        return false;
+                    }
+                }
+            </script>
 </head>
 <body background="images/bg.jpg">
     <table border="1" align="center" cellpadding="10">
@@ -52,8 +56,20 @@
             </font></td>
         </tr>
         <tr>
-        <td width="30%" valign="top" ><H1 align="center"><font color="green">Реєстрація</font></H1>
-            <form action="forma.php" method="post" onsubmit="return send();">
+        <td width="30%" valign="top" >
+<font size="5" color="navy"><h2>Новини</h2></font>
+<font size="5" >
+<ul>
+<li><a href="#">Сайт будівельної компанії </a></li>
+<li><a href="#">Сайт ТМ "Новашкола" </a></li>
+<li><a href="#">Редизайн сайту classno.com.ua</a></li>
+<li><a href="#">Розробка CMS для Metro Cash&Carry</a></li>
+<li><a href="#">Сайт-візитка дизайнера інтерфейсів</a></li><br>
+<p align="right"><a href="#">інші...</a></p>
+</ul>
+</font>
+            <H1 align="center"><font color="green">Реєстрація</font></H1>
+            <form action="forma.php" method="post" onsubmit="return send()">
             <TABLE align="center">
             <TR>
             <TD><font color="green">Прізвище</font>: </TD>
@@ -82,17 +98,8 @@
             </p>
             </form>
             <hr></td>
-        <font size="5" color="navy"><h2>Новини</h2></font>
-<font size="5" >
-<ul>
-<li><a href="#">Сайт будівельної компанії </a></li>
-<li><a href="#">Сайт ТМ "Новашкола" </a></li>
-<li><a href="#">Редизайн сайту classno.com.ua</a></li>
-<li><a href="#">Розробка CMS для Metro Cash&Carry</a></li>
-<li><a href="#">Сайт-візитка дизайнера інтерфейсів</a></li><br>
-<p align="right"><a href="#">інші...</a></p>
-</ul>
-</font>
+            <center><canvas id="canvas" height="120" width="120"></canvas></center>
+        
 
         <td width="70%"><H1>Зробити сайт з нами легко</H1>
             <font size="5">
